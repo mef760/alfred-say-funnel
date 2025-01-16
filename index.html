@@ -2,8 +2,8 @@
     <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Alfred Say</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.min.css" rel="stylesheet"/>
@@ -54,18 +54,18 @@
         </section>
         <section class="px-4 py-8">
             <h3 class="text-xl font-bold mb-6">Únete a la Lista VIP</h3>
-            <form id="contact-form" class="space-y-4">
+            <form id="contact-form" class="space-y-4" action="https://script.google.com/macros/s/AKfycbw2AHIQmGEsRGgBhNTBahKi5C87lsEcrBsIg7abhxFu3hfgCEp7rGyOt8woF_MsYlEsxw/exec" method="post">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Nombre del Restaurante</label>
-                    <input type="text" id="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom focus:border-custom" placeholder="Restaurante El Gourmet" required/>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom focus:border-custom" placeholder="Restaurante El Gourmet" required/>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom focus:border-custom" placeholder="correo@restaurante.com" required/>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom focus:border-custom" placeholder="correo@restaurante.com" required/>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono (opcional)</label>
-                    <input type="tel" id="telefono" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom focus:border-custom" placeholder="+54 XXX XXX XXX"/>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom focus:border-custom" placeholder="+54 XXX XXX XXX"/>
                 </div>
                 <button type="submit" class="w-full py-3 bg-custom text-white font-semibold !rounded-button">
                     Únete a la Lista VIP
@@ -84,39 +84,12 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
-    <script>
+    <!-- <script>
     new Glide('.glide', {
         type: 'carousel',
         perView: 1,
         gap: 20,
         autoplay: 3000
     }).mount();
-</script>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const telefono = document.getElementById('telefono').value;
-
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbw2AHIQmGEsRGgBhNTBahKi5C87lsEcrBsIg7abhxFu3hfgCEp7rGyOt8woF_MsYlEsxw/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, email, telefono }),
-      });
-      
-      const result = await response.json();
-      if (result.success) {
-        alert('Formulario enviado correctamente.');
-      } else {
-        alert('Hubo un error al enviar el formulario.');
-      }
-    } catch (error) {
-      alert('Error de conexión.');
-    }
-  });
-
-    </script>
+</script> -->
     
